@@ -1,4 +1,6 @@
 ## -------------------- Greatest common divisor ------------------------- ##
+#Written by: Aarni Junkkala
+
 #Returns the value of the greates common divisor
 #Example:  GCD([12,6,15]) -> 3
 def GCD(numbers):
@@ -20,8 +22,6 @@ def GCD(numbers):
         else:
             return False
 
-    
-    
     ## ----- Singular value returns itself ----- ##
     if len(numbers) == 1:
         return numbers[0]
@@ -66,14 +66,5 @@ def GCD(numbers):
         return num
   
 if __name__ == '__main__':
-    #Tests and answers
-    print(GCD([0,100,999])) # = 0
-    print(GCD([1,100,999])) # = 1
-    print(GCD([1,100,0]))   # = 0
-    print(GCD([4,6,8]))     # = 2
-    print(GCD([-10,-15]))   # = 5
-    print(GCD([1.23, 4.56]))# = False
-    print(GCD(["Cat", "Dog"]))# = False
-    print(GCD([0]))         # = False
-    print(GCD(0))           # = False
-    print(GCD("Cat"))     # = False
+    #Test
+    print(GCD([15,21,30]))

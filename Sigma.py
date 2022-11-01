@@ -1,4 +1,6 @@
 ## -------------------- Sigma ------------------------- ##
+#Written by: Aarni Junkkala
+
 #Use integer for reapeats (n) and index (i) and calculation as string.
 #Code uses eval, so for the calculation you can put (n) and (i) as variables
 def Sigma(n,i,calculation):

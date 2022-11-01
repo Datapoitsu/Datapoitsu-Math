@@ -1,4 +1,6 @@
 ## -------------------- Least Common Multiple -------------------- ##
+#Written by: Aarni Junkkala
+
 import GreatestCommonDivisor as GCD #Required
 def LCM(numbers):
     ## ----- Return and Fail conditions ----- ##
@@ -26,8 +28,7 @@ def LCM(numbers):
 
     ## ----- Converts all numbers to positive numbers ----- ##
     for i in range(len(numbers)):
-        if numbers[i] < 0:
-            numbers[i] *= -1
+        numbers[i] = abs(numbers[i])
     
     ## ----- Processing itself ----- ##
     #If list is longer than two, code repeats to formula to each number and the result
@@ -36,7 +37,7 @@ def LCM(numbers):
         result = (num * numbers[i]) / (GCD.GCD([num,numbers[i]])) #Formula
         num = result
     return result
-    
+
 if __name__ == '__main__':
     #Tests and answers
     print(LCM([0,100])) # = False

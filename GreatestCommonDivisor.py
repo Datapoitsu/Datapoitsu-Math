@@ -43,7 +43,7 @@ def GCD(numbers):
             return 1
     
     ## ----- Prosessing the GCD ----- ##
-    #Gets the value with lowest value from the list
+    #Gets the value with lowest value from the list, as answer will always be <= to that
     Lowest = numbers[0]
     for i in range(len(numbers)):
         if numbers[i] < Lowest:

@@ -1,8 +1,6 @@
 ## -------------------- Quadractic Formula ------------------------- ##
 #Written by: Aarni Junkkala
 
-import math #I will change to my own library, once I get sqrt() code working
-
 #Solves quadratic equation. it looks like following: a*x**2 + b*x + c = 0
 #If not able to solve the answer, as equation doesn't hit zero line, code will return None
 def QuadracticFormula(a,b,c):
@@ -12,7 +10,7 @@ def QuadracticFormula(a,b,c):
     if part1 < 0:
         return None
     
-    part2 = math.sqrt(part1)
+    part2 = part1 ** (1/2)
     
     #3.1 and 3.2 are separeted as, there is possibility of being two answers,
     #because of the plus-minus sign in formula.

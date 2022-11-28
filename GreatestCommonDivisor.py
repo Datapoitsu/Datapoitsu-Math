@@ -22,6 +22,17 @@ def GCD(numbers):
         else:
             return False
 
+    ## ----- Removing zeros ----- ##
+    # -- If there is a zero, then it is ignored
+    #Collects amount of zeros
+    ToRemove = 0
+    for i in range(len(numbers)):
+        if numbers[i] == 0:
+            ToRemove += 1
+    #Removes all zeros
+    for i in range(ToRemove):
+        numbers.remove(0)
+
     ## ----- Singular value returns itself ----- ##
     if len(numbers) == 1:
         return numbers[0]
@@ -30,12 +41,6 @@ def GCD(numbers):
     for i in range(len(numbers)):
         if numbers[i] < 0:
             numbers[i] *= -1
-    
-    ## ----- Obvious answers ----- ##
-    #If there is zero, return zero
-    for i in range(len(numbers)):
-        if numbers[i] == 0:
-            return 0
     
     #If there is one, return one
     for i in range(len(numbers)):
@@ -67,4 +72,6 @@ def GCD(numbers):
   
 if __name__ == '__main__':
     #Test
-    print(GCD([15,21,30]))
+    print(GCD([112,98]))
+    print(GCD([356,92]))
+    print(GCD([0,15,3,0,2]))

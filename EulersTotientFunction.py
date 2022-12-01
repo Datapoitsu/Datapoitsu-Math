@@ -1,6 +1,7 @@
 ## ------------------- Euler's totient function ------------------- ##
 #Written by: Aarni Junkkala
 
+#Also known as Φ(x), "phi" function.
 # Tests all numbers from 0, to k, returns the total amout of numbers where GCD([n,k]) = 1
 import GreatestCommonDivisor as GCD
 def ETF(number):

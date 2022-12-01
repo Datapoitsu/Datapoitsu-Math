@@ -45,3 +45,5 @@ if __name__ == '__main__':
     print(LCM([6,4])) # = 12
     print(LCM([-12,5])) # = 60
     print(LCM([2,3,4,5,7])) # = 420
+    print(LCM([980,4950]))
+    print(LCM([36,20]))

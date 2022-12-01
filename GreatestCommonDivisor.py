@@ -4,8 +4,9 @@
 #Returns the value of the greates common divisor
 #Example:  GCD([12,6,15]) -> 3
 def GCD(numbers):
+    
     ## ----- Return and Fail conditions ----- ##
-
+    
     #Must be a list
     if type(numbers) != list:
         return False
@@ -23,7 +24,11 @@ def GCD(numbers):
             return False
 
     ## ----- Removing zeros ----- ##
-    # -- If there is a zero, then it is ignored
+    # -- How zero really works in GCD -- #
+    # GDC(a,0) = a
+    # Later on code will return value if it is singular.
+    # So zeros will just be removed and result will be good.
+    
     #Collects amount of zeros
     ToRemove = 0
     for i in range(len(numbers)):
@@ -42,15 +47,30 @@ def GCD(numbers):
         if numbers[i] < 0:
             numbers[i] *= -1
     
-    #If there is one, return one
+    ## ----- Number one always returns one ----- ##
+    # GCD(a,1) = 1
     for i in range(len(numbers)):
         if numbers[i] == 1:
             return 1
     
+    ## ----- if all values are same, then just return one of them ----- ##
+    # a = b, GCD(a,b) = a || GCD(a,b) = b
+    AllSame = True
+    for i in range(1,len(numbers)):
+        if numbers[0] != numbers[i]:
+            AllSame = False
+            break
+    if AllSame == True:
+        return numbers[0]
+    
     ## ----- Prosessing the GCD ----- ##
+    #Code starts from the lowest number on the list,
+    #then tests if it is divisor of all number.
+    #If not, then lowers number by one, till divisor of all is found or number becomes one.
+    
     #Gets the value with lowest value from the list, as answer will always be <= to that
     Lowest = numbers[0]
-    for i in range(len(numbers)):
+    for i in range(1,len(numbers)):
         if numbers[i] < Lowest:
             Lowest = numbers[i]
     

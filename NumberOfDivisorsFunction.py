@@ -53,7 +53,7 @@ def NumberOfDivisorsFunction(n,z):
         Divisors[i] **= z
     return sum(Divisors) #Returns the sum, because when z = 0, is equal of len()
 
-def SigmaFunction(n): #Sigma function is one where z = 1
+def SigmaFunction(n): #Sigma σ function is one where z = 1
     NumberOfDivisorsFunction(n,1)
 
 if __name__ == '__main__':

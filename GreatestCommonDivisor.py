@@ -38,6 +38,10 @@ def GCD(numbers):
     for i in range(ToRemove):
         numbers.remove(0)
 
+    #If all were zeros, then return zero
+    if len(numbers) == 0:
+        return 0
+
     ## ----- Singular value returns itself ----- ##
     if len(numbers) == 1:
         return numbers[0]
@@ -92,6 +96,8 @@ def GCD(numbers):
   
 if __name__ == '__main__':
     #Test
-    print(GCD([112,98]))
-    print(GCD([356,92]))
-    print(GCD([0,15,3,0,2]))
+    print(GCD([112,98])) #14
+    print(GCD([356,92])) #4
+    print(GCD([0,15,3,0,2])) #1
+    print(GCD([0,0])) #0
+    print(GCD([15,9])) #3

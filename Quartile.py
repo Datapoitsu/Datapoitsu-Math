@@ -5,12 +5,11 @@
 def Median(Data):
     Data.sort()
     
-    #For odd amount of data, median is data that is located in center
     if len(Data) % 2 == 1:
+        #For odd amount of data, median is data that is located in center
         return Data[int((len(Data) / 2))]
-    
-    #For even amount of data median is avarage of two most center values
-    if len(Data) % 2 == 0:
+    else:
+        #For even amount of data median is avarage of two most center values
         return (Data[int(len(Data) / 2)] + Data[int(len(Data) / 2 - 1)]) / 2
 
 def SecondQ(Data): #Other name for median
@@ -37,12 +36,11 @@ def ThirdQ(Data):
     for i in range(len(Data)):
         if Data[i] >= S:
             SecondHalf.append(Data[i])
-    
     return Median(SecondHalf)
     
 if __name__ == '__main__':
     D = [51.263,49.46,48.457,50.651,52.455,49.896,50.405,49.949,50.75]
-    D = OrderList(D)
+    D.sort()
     print("F: " + str(FirstQ(D)))
     print("S: " + str(SecondQ(D)))
     print("T: " + str(ThirdQ(D)))

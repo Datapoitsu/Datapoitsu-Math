@@ -1,4 +1,5 @@
 ## -------------------- Congruence Relation -------------------- ##
+#Written by: Aarni Junkkala
 
 #Returns True or False, baced on weather the modulo n of a and b is same
 def ConRel(a,b,n):

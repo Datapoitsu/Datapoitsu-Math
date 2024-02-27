@@ -1,4 +1,7 @@
 ## -------------------- Product of a sequence -------------------- ##
+#Written By: Aarni Junkkala
+
+#TODO: Uses eval(), research if it is possible to do without it.
 
 def Product(n,index,calculation):
     Total = 1

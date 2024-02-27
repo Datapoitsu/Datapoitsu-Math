@@ -5,7 +5,7 @@
 # 24 is built with: 1 x 24, 2 x 12, 3 x 8, 4 x 6. Total of 8
 # Each of the divisors are put on potency of z, when z = 0 then function returns the amount of divisors
 
-def NumberOfDivisorsFunction(n,z):
+def NumberOfDivisorsFunction(n,z=0):
     ## -- Eliminating impossible situations -- ##
     if n <= 0: #Must be more zero
         return False
@@ -58,4 +58,6 @@ def SigmaFunction(n): #Sigma σ function is one where z = 1
 
 if __name__ == '__main__':
     for i in range(1,15):
-        print("nro" + str(i) + ": " + str(NumberOfDivisorsFunction(i,0)))
+        print("nro", i, ": ", str(NumberOfDivisorsFunction(i)))
+    for i in range(1,15):
+        print("Z=1,nro", i, ": ", str(NumberOfDivisorsFunction(i,1)))

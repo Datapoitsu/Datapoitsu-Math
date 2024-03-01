@@ -82,9 +82,37 @@ def PrimeLesserThan(n):
     while primes[-1] < n:
         CalculatePrime(len(primes))
     return primes[-2]
+
+def PrimesFrom(Smallest = 2,Greatest = 2): #Greatest must be 2 or higher
+    global primes
     
-#Used for matematical usage, where prime1 = fisrt, where as in coding 0 is first.
+    #Fail cases and easy answers.
+    if Greatest < 2 or Smallest > Greatest: 
+        return []
+    
+    if Smallest == Greatest:
+        if IsPrime(Smallest):
+            return [Smallest]
+        else:
+            return []
+
+    #Looks for primes, if there arent enough already.
+    while len(primes) < 0 or primes[-1] < Greatest:
+        CalculatePrime(len(primes))
+    
+    indexS = -1
+    indexG = len(primes)
+
+    for i in range(len(primes)): #Looks for indexs of the smallest and largest prime.
+        if indexS == -1 and primes[i] >= Smallest:
+            indexS = i
+        if primes[i] > Greatest and i > 0:
+            indexG = i
+            break #No need to look furter
+    return primes[indexS:indexG]
+
 def GetPrime(n):
+    #Used for matematical usage, where prime1 = fisrt, where as in coding 0 is first.
     global primes
     if n - 1 > len(primes) - 1:
         CalculatePrime(n)
@@ -102,6 +130,12 @@ if __name__ == '__main__':
     #Gets the prime greater than n
     print("Prime greater than 15:", PrimeGreaterThan(15))
     print("Prime greater than 5:", PrimeGreaterThan(5))
+
+    #Gets the range of primes
+    print("Primes from range 100-200:",PrimesFrom(100,200))
+    print("Primes from range 15-35:",PrimesFrom(13,31))
+    print("Primes from range 0-1:",PrimesFrom(0,1))
+    print("Primes from range 7-7:",PrimesFrom(7,7))
 
     #Gets the prime that is 10th (smallest number to use is 1)
     print("5th prime (math):",GetPrime(5))
